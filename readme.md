@@ -25,7 +25,7 @@ Note: this project was tested using dotnet runtime v2.0.6, SDK v2.1.101
 ```
 cd data-service
 docker build -t data-service .
-docker run -d -p 8081:5000 data-service
+docker run -d -p 8081:80 data-service
 ```
 
-Navigate to http://localhost:5000/api/values
+Navigate to http://localhost:8081/api/values
