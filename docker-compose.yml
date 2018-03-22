@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  api:
+    image: brbarnett/api
+  data:
+    image: brbarnett/data-service

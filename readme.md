@@ -12,8 +12,8 @@ Note: this project was tested using Node.js v8.10.0
 
 ```
 cd api
-docker build -t api .
-docker run -d -p 8080:8080 api
+docker build -t brbarnett/api .
+docker run -d -p 8080:8080 brbarnettapi
 ```
 
 Navigate to http://localhost:8080/
@@ -24,8 +24,16 @@ Note: this project was tested using dotnet runtime v2.0.6, SDK v2.1.101
 
 ```
 cd data-service
-docker build -t data-service .
-docker run -d -p 8081:80 data-service
+docker build -t brbarnett/data-service .
+docker run -d -p 8081:80 brbarnett/data-service
 ```
 
 Navigate to http://localhost:8081/api/values
+
+## Using docker-compose
+
+Run the following commands to start all containers
+
+```
+docker-compose up -d
+```
