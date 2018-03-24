@@ -1,16 +1,13 @@
 FROM microsoft/aspnetcore-build:2.0
 
+ENV DOTNET_USE_POLLING_FILE_WATCHER 1
+ENV ASPNETCORE_ENVIRONMENT Development
+ENV PORT 80
+
 RUN mkdir -p /app
 WORKDIR /app
-
 COPY *.csproj /app
-RUN dotnet restore
 
-COPY . /app
-
-RUN dotnet publish -c Release -o out
-
-ENV PORT 80
 EXPOSE 80
 
-CMD ["dotnet", "data-service.dll"]
+ENTRYPOINT dotnet restore && dotnet watch run --configuration Debug
