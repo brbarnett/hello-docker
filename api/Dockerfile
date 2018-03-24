@@ -1,5 +1,7 @@
 FROM node:8.10.0
 
+ENV PORT 8080
+
 RUN mkdir -p /app
 WORKDIR /app
 
@@ -13,7 +15,6 @@ RUN npm install \
  && mv /app/node_modules /node_modules
 COPY . /app
 
-ENV PORT 80
-EXPOSE 80
+EXPOSE 8080
 
 CMD ["node", "server.js"]
