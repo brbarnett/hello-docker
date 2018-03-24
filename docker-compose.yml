@@ -8,3 +8,10 @@ services:
       - ./api:/app
     ports:
       - "8080:8080"
+  data-service:
+    build: ./data-service
+    command: dotnet watch run
+    volumes:
+      - ./data-service:/app
+    ports:
+      - "8081:80"

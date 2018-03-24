@@ -1,19 +1,16 @@
-FROM microsoft/aspnetcore-build:2.0 AS build-env
+FROM microsoft/aspnetcore-build:2.0
+
+RUN mkdir -p /app
 WORKDIR /app
 
-LABEL maintainer="brandon.r.barnett@gmail.com"
-
-# Copy csproj and restore as distinct layers
-COPY *.csproj ./
+COPY *.csproj /app
 RUN dotnet restore
 
-# Copy everything else and build
-COPY . ./
+COPY . /app
+
 RUN dotnet publish -c Release -o out
 
-# Build runtime image
-FROM microsoft/aspnetcore:2.0
-WORKDIR /app
-COPY --from=build-env /app/out .
+ENV PORT 80
+EXPOSE 80
 
-ENTRYPOINT ["dotnet", "data-service.dll"]
+CMD ["dotnet", "data-service.dll"]
