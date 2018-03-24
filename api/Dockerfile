@@ -1,4 +1,4 @@
-FROM node:8.10.0 AS build-env
+FROM node:8.10.0
 
 RUN mkdir -p /app
 WORKDIR /app
