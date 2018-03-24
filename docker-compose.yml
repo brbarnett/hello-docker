@@ -10,7 +10,7 @@ services:
       - "8080:8080"
   data-service:
     build: ./data-service
-    command: dotnet watch run
+    command: dotnet watch run --configuration Debug
     volumes:
       - ./data-service:/app
     ports:
