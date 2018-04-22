@@ -1,0 +1,9 @@
+version '3.6'
+
+services:
+
+  experts.api:
+    build:
+      context: .
+      dockerfile: src/Services/Experts/Experts.API/Dockerfile
+        
