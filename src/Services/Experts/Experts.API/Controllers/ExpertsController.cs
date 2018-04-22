@@ -14,7 +14,7 @@ namespace Experts.API.Controllers
     {
 
         [HttpGet]
-        [Route("/{id:int}")]
+        [Route("{id:int}")]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType(typeof(Expert),(int)HttpStatusCode.OK)]
         public async Task<IActionResult> GetById(int id)
