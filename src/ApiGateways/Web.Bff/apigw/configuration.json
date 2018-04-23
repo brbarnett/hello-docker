@@ -12,11 +12,7 @@
             "UpstreamPathTemplate": "/api/{version}/experts/{everything}",
             "UpstreamHttpMethod": [
                 "GET"
-            ],
-            "AuthenticationOptions": {
-                "AuthenticationProviderKey": "IdentityApiKey",
-                "AllowedScopes": []
-            }
+            ]
         }
     ]
 }
