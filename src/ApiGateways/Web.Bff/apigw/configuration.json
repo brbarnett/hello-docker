@@ -9,7 +9,7 @@
                     "Port": 80
                 }
             ],
-            "UpstreamPathTemplate": "/api/{version}/e/{everything}",
+            "UpstreamPathTemplate": "/api/{version}/experts/{everything}",
             "UpstreamHttpMethod": [
                 "GET"
             ],
@@ -18,9 +18,5 @@
                 "AllowedScopes": []
             }
         }
-    ],
-    "GlobalConfiguration": {
-        "RequestIdKey": "OcRequestId",
-        "AdministrationPath": "/administration"
-    }
+    ]
 }
