@@ -4,7 +4,7 @@ EXPOSE 80
 
 FROM microsoft/aspnetcore-build:2.0.7-2.1.105 AS build
 WORKDIR /src
-COPY . .
+COPY /src/Services/Experts/Experts.API .
 RUN dotnet restore
 #WORKDIR /src/src/Services/Experts/Experts.API
 RUN dotnet build --no-restore -c Release -o /app
