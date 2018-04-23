@@ -1,0 +1,15 @@
+version: '3.6'
+
+services:
+  experts.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5001:80"
+  webapigateway:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5002:80"   
+    volumes:
+      - ./src/ApiGateways/Web.Bff/apigw:/app/configuration
