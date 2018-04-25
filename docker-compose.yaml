@@ -1,9 +1,28 @@
 version: '3.6'
 
-services: 
-  experts.api:
+services:
+
+  reverse-proxy:
+    image: nginx-proxy
     build:
-      context: .
-      dockerfile: src/Services/Experts/Experts.API/Dockerfile
-  webapigateway:
-    image: rightpoint/rpac-api-gateway
+      context: ./src/Proxy
+    ports:
+      - "8081:80"
+    networks:
+      - frontend
+    deploy:
+      replicas: 2
+
+  hello1:
+    image: httpd:alpine
+    ports:
+      - "8082:80"
+    networks:
+      - frontend
+      - backend
+    deploy:
+      replicas: 4
+
+networks:
+  frontend:
+  backend:
